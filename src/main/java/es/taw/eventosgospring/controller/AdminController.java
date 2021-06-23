@@ -8,14 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("admin")
 public class AdminController {
-
 
     @GetMapping("/UsuariosCargar")
     public String UsuariosCargar(Model model, HttpSession session){
 
-        return "adminUsuarios.jsp";
+        return "adminUsuarios";
     }
 
 

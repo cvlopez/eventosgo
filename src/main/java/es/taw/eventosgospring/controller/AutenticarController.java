@@ -21,8 +21,8 @@ public class AutenticarController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping("/")
-    public String doInit(){
+    @GetMapping("/iniciarSesion")
+    public String doIniciarSesion(){
         return "inicioSesion";
     }
 
@@ -46,7 +46,7 @@ public class AutenticarController {
                 strTo = "inicioSesion";
             } else{
                 sesion.setAttribute("usuario", user);
-                strTo="redirect:evento/listarEventos";
+                strTo="redirect:/listarEventos";
             }
         }
 

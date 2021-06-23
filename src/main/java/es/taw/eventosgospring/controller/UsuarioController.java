@@ -23,7 +23,6 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("usuario")
 public class UsuarioController {
     private UsuarioService usuarioService;
     private UsuarioEventoService usuarioEventoService;
@@ -70,7 +69,7 @@ public class UsuarioController {
         } else{
             UsuarioDTO nuevoUsuarioDTO = new UsuarioDTO();
             UsuarioEventoDTO nuevoUsuarioEventoDTO = new UsuarioEventoDTO();
-            strTo="paginaInicioWeb";
+            strTo="redirect:/listarEventos";
 
             nuevoUsuarioDTO.setRol(4);
             nuevoUsuarioDTO.setNombre(nombre);
@@ -91,6 +90,7 @@ public class UsuarioController {
             }
 
             this.usuarioEventoService.guardarUsuarioEvento(nuevoUsuarioEventoDTO);
+
         }
 
         return strTo;

@@ -3,6 +3,7 @@ package es.taw.eventosgospring.service;
 import es.taw.eventosgospring.dao.UsuarioEventoRepository;
 import es.taw.eventosgospring.dao.UsuarioRepository;
 import es.taw.eventosgospring.dto.UsuarioEventoDTO;
+import es.taw.eventosgospring.entity.Usuario;
 import es.taw.eventosgospring.entity.UsuarioEvento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,9 +35,10 @@ public class UsuarioEventoService {
 
     public void guardarUsuarioEvento(UsuarioEventoDTO dto){
         UsuarioEvento usuarioEvento = new UsuarioEvento();
+        Usuario usuario =  this.usuarioRepository.findById(dto.getId()).orElse(null);
 
-        usuarioEvento.setId(dto.getId());
-        usuarioEvento.setUsuarioById(this.usuarioRepository.findById(dto.getId()).orElse(null));
+        usuarioEvento.setId(usuario.getId());
+        // usuarioEvento.setUsuarioById(usuario);
         usuarioEvento.setApellidos(dto.getApellidos());
         usuarioEvento.setDomicilio(dto.getDomicilio());
         usuarioEvento.setFechaNacimiento(dto.getFechaNacimiento());
@@ -44,5 +46,12 @@ public class UsuarioEventoService {
         usuarioEvento.setSexo(dto.getSexo());
 
         this.usuarioEventoRepository.save(usuarioEvento);
+
+        /*
+        usuario.setUsuarioEventoById(usuarioEvento);
+
+        this.usuarioRepository.save(usuario);
+        */
+
     }
 }

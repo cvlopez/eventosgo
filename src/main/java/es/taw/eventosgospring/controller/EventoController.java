@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping("evento")
 public class EventoController {
     private EventoService eventoService;
 
@@ -31,14 +30,18 @@ public class EventoController {
         return strTo;
     }
 
+    @GetMapping("/")
+    public String doInit(){
+        return "redirect:/listarEventos";
+    }
+
     @GetMapping("/listarEventos")
     public String doListarEventosDisponibles(Model model, HttpSession sesion){
-        String strTo = this.comprobarUsuarioNoAutentificado(sesion);
-        if (strTo == null) {   // El usuario está autentificado
-            List<EventoDTO> eventos = this.eventoService.listarEventosDisponibles();
-            model.addAttribute("eventosDisponibles", eventos);
-            strTo="paginaInicioWeb";
-        }
+
+        List<EventoDTO> eventos = this.eventoService.listarEventosDisponibles();
+        model.addAttribute("eventosDisponibles", eventos);
+        String strTo="paginaInicioWeb";
+
         return strTo;
     }
 }

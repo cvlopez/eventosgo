@@ -95,8 +95,8 @@
       <%
         if (rol < 0) {
       %>
-      <a class="btn btn-outline-light m-4" href="usuario/registrar" role="button">Registrarse</a>
-      <a class="btn btn-outline-light" href="/autenticar" role="button">Iniciar Sesi&oacute;n</a>
+      <a class="btn btn-outline-light m-4" href="/registrar" role="button">Registrarse</a>
+      <a class="btn btn-outline-light" href="/iniciarSesion" role="button">Iniciar Sesión</a>
       <%
       } else {
       %>
