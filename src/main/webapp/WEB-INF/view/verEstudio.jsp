@@ -11,6 +11,8 @@
 <%@page import="eventosgowebapp.entity.Estudio"%>
 <%@page import="eventosgowebapp.entity.UsuarioEvento"%>
 <%@page import="java.util.List"%>
+<%@ page import="es.taw.eventosgo.entity.UsuarioEvento" %>
+<%@ page import="es.taw.eventosgo.entity.Estudio" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -50,7 +52,7 @@
                         %>
                         <tr>
                             <th scope="row"><%= i %></th>
-                            <td><%= u.getUsuario().getNombre()%></td>
+                            <td><%= u.getUsuarioById().getNombre()%></td>
                             <%
                                 SimpleDateFormat sdf = new SimpleDateFormat("YYYY");
                                 SimpleDateFormat sdf1 = new SimpleDateFormat("MM");

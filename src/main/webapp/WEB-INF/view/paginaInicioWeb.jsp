@@ -6,10 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@page import="es.taw.eventosgospring.entity.Evento"%>
 <%@page import="java.util.List"%>
-<%@page import="es.taw.eventosgospring.entity.Usuario"%>
-<%@ page import="es.taw.eventosgospring.dto.EventoDTO" %>
+<%@ page import="es.taw.eventosgo.dto.EventoDTO" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

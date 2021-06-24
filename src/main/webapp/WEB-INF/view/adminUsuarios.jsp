@@ -1,8 +1,7 @@
 <%@page import="java.util.List"%>
+<%@ page import="es.taw.eventosgo.entity.Usuario" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="es.taw.eventosgospring.entity.*"%>
-<%@page import="es.taw.eventosgospring.dao.*"%>html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +55,7 @@
                 <th scope="row"><%= (i + 1)%></th>
                 <td><a href = "ServletAdminCrudUsuario?id=<%=listaUsuarios.get(i).getId()%>"><%= listaUsuarios.get(i).getNombre()%></a></td>
                 <td><%= listaUsuarios.get(i).getCorreo()%></td>
-                <td><%= listaUsuarios.get(i).getRolDescripcion()%></td>
+                <td><%= listaUsuarios.get(i).getRol()%></td>
             </tr>
 
             <%

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="es.taw.eventosgo.dto.UsuarioDTO" %><%--
   Created by IntelliJ IDEA.
   User: x Cristhian x
   Date: 18/06/2021
@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ page import="es.webapp.eventosgo.dto.UsuarioDTO" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

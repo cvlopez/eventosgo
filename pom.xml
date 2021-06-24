@@ -8,7 +8,7 @@
         <version>2.4.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>es.webapp</groupId>
+    <groupId>es.taw</groupId>
     <artifactId>eventosgo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eventosgo</name>
@@ -42,18 +42,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>

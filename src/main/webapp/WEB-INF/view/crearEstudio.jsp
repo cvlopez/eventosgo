@@ -4,7 +4,6 @@
     Author     : juanm
 --%>
 
-<%@page import="es.webapp.eventosgo.entity.Usuario"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

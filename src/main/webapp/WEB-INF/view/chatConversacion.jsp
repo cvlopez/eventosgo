@@ -5,9 +5,10 @@
 --%>
 
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="eventosgowebapp.entity.Conversacion"%>
-<%@page import="eventosgowebapp.entity.Mensaje"%>
 <%@page import="java.util.List"%>
+<%@ page import="es.taw.eventosgo.entity.Mensaje" %>
+<%@ page import="es.taw.eventosgo.entity.Conversacion" %>
+<%@ page import="es.taw.eventosgo.entity.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,12 +18,12 @@
             Conversacion c = (Conversacion) request.getAttribute("conversacion");
             Usuario u = (Usuario) request.getAttribute("user");
             String destino, origen;
-            if (u.getId() == c.getIdUsuario().getId()) {
-                origen = c.getIdUsuario().getNombre();
-                destino = c.getIdTeleoperador().getNombre();
+            if (u.getId() == c.getUsuarioByIdUsuario().getId()) {
+                origen = c.getUsuarioByIdUsuario().getNombre();
+                destino = c.getUsuarioByIdTeleoperador().getNombre();
             } else {
-                origen = c.getIdTeleoperador().getNombre();
-                destino = c.getIdUsuario().getNombre();
+                origen = c.getUsuarioByIdTeleoperador().getNombre();
+                destino = c.getUsuarioByIdUsuario().getNombre();
             }
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -46,7 +47,7 @@
                                     <%                    for (Mensaje m : listaMensajes) {
 
                                             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-                                            if (u.getId() == m.getIdUsuario().getId()) {
+                                            if (u.getId() == m.getUsuarioByIdUsuario().getId()) {
                                     %>
                                     <!-- Mensaje de Suyo -->
                                     <div class="row justify-content-end">
@@ -78,7 +79,7 @@
                                     %>
                             </article>
                             <%
-                                if (u.getId() == c.getIdTeleoperador().getId() || u.getId() == c.getIdUsuario().getId()) {
+                                if (u.getId() == c.getUsuarioByIdTeleoperador().getId() || u.getId() == c.getUsuarioByIdUsuario().getId()) {
                             %>
                             <div class="container">
                                 <form action="ServletMensajeEnviar">

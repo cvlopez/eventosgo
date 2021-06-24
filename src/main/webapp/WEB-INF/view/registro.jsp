@@ -7,7 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@page import="es.taw.eventosgospring.entity.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

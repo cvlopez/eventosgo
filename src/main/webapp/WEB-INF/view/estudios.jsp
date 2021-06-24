@@ -4,9 +4,8 @@
     Author     : juanm
 --%>
 
-<%@page import="es.webapp.eventosgo.entity.Usuario"%>
 <%@page import="java.util.List"%>
-<%@page import="es.webapp.eventosgo.entity.Estudio"%>
+<%@ page import="es.taw.eventosgo.dto.EstudioDTO" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Estudios Estad&iacute;sticos</title>
         <%
-            List<Estudio> estudios = (List) request.getAttribute("listaEstudios");
+            List<EstudioDTO> estudios = (List) request.getAttribute("listaEstudios");
             int pagina = (Integer) request.getAttribute("pagina");
             List<Integer> resultados = (List) request.getAttribute("resultadoEstudios");
         %>

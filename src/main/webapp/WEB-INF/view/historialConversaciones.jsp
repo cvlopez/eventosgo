@@ -5,10 +5,7 @@
 --%>
 
 <%@page import="java.util.List"%>
-<%@page import="eventosgowebapp.entity.Usuario"%>
-<%@page import="eventosgowebapp.entity.Mensaje"%>
-<%@page import="eventosgowebapp.entity.Mensaje"%>
-<%@page import="eventosgowebapp.entity.Conversacion"%>
+<%@ page import="es.taw.eventosgo.entity.Conversacion" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,10 +35,10 @@
                         <div class="d-flex w-100 justify-content-between">
                             <h3 class="mb-1"><%= c.getAsunto()%></h3>
                         </div>
-                        <p><%= (c.getMensajeList().size() > 0) ? c.getMensajeList().get(c.getMensajeList().size() - 1).getTexto() : ""%></p>
+                        <p><%= (c.getMensajesById().size() > 0) ? c.getMensajesById().get(c.getMensajesById().size() - 1).getTexto() : ""%></p>
                         <div class="d-flex w-100 justify-content-between">
-                            <small><%= (id == c.getIdTeleoperador().getId()) ? "Tú" : c.getIdTeleoperador().getNombre()%> </small>
-                            <small><%= c.getIdUsuario().getCorreo()%> </small>
+                            <small><%= (id == c.getUsuarioByIdTeleoperador().getId()) ? "Tú" : c.getUsuarioByIdTeleoperador().getNombre()%> </small>
+                            <small><%= c.getUsuarioByIdUsuario().getCorreo()%> </small>
                         </div>
                     </a>
                     <%

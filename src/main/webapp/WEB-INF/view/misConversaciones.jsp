@@ -10,9 +10,10 @@
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@page import="eventosgowebapp.entity.Mensaje"%>
 <%@page import="java.util.List"%>
-<%@page import="eventosgowebapp.entity.Conversacion"%>
+<%@ page import="es.taw.eventosgo.entity.Conversacion" %>
+<%@ page import="es.taw.eventosgo.entity.Mensaje" %>
+<%@ page import="es.taw.eventosgo.entity.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -88,8 +89,8 @@
                 <div class="list-group">
                     <%                        for (Conversacion c : lista) {
                             int cntSinLeer = 0;
-                                for (Mensaje m1 : c.getMensajeList()) {
-                                    if (m1.getVisto() == 0 && !m1.getIdUsuario().equals((Usuario) request.getAttribute("user"))) {
+                                for (Mensaje m1 : c.getMensajesById()) {
+                                    if (m1.getVisto() == 0 && !m1.getUsuarioByIdUsuario().equals((Usuario) request.getAttribute("user"))) {
                                         cntSinLeer++;
                                     }
                                 }
@@ -106,8 +107,8 @@
                             %>
 
                         </div>
-                        <p><%= (c.getMensajeList().size() > 0) ? c.getMensajeList().get(c.getMensajeList().size() - 1).getTexto() : ""%></p>
-                        <small><%= (rol == 2) ? c.getIdUsuario().getCorreo() : c.getIdTeleoperador().getNombre()%></small>
+                        <p><%= (c.getMensajesById().size() > 0) ? c.getMensajesById().get(c.getMensajesById().size() - 1).getTexto() : ""%></p>
+                        <small><%= (rol == 2) ? c.getUsuarioByIdUsuario().getCorreo() : c.getUsuarioByIdTeleoperador().getNombre()%></small>
                     </a>
                     <%
                         }
