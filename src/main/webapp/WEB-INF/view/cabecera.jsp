@@ -6,8 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@page import="es.taw.eventosgospring.entity.Usuario"%>
-<%@ page import="es.taw.eventosgospring.dto.UsuarioDTO" %>
+<%@ page import="es.webapp.eventosgo.dto.UsuarioDTO" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -56,7 +55,7 @@
           if (rol == 3) {
         %>
         <li class="nav-item">
-          <a class="nav-link" href="ServletEstudioCargar">Estudios</a>
+          <a class="nav-link" href="/estudios/">Mis Estudios</a>
         </li>
         <%
           }
@@ -100,7 +99,7 @@
       <%
       } else {
       %>
-      <a class="btn btn-outline-light m-4" href="#" role="button">Perfil</a>
+      <a class="btn btn-outline-light m-4" href="#" role="button" hidden>Perfil</a>
       <a class="btn btn-outline-light" href="/cerrarSesion" role="button">Cerrar Sesi&oacute;n</a>
       <%
         }
